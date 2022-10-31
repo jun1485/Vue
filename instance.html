@@ -17,3 +17,31 @@
     </script>
   </body>
 </html>
+
+
+
+// inputField.vue
+<template>
+  <div>
+    <form>
+      <label>ID</label>
+      <input type="text" :value="title" style="padding: 20px; border: 1px pink solid">
+      <button>Submit</button>
+    </form>
+  </div>
+</template>
+<script>
+
+export default {
+  props: {
+    title: {
+      type: String,
+      required: true
+    }
+  }
+}
+</script>
+  
+<style>
+
+</style>
