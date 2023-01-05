@@ -1,0 +1,30 @@
+// 라우터 이용 시 자동으로 API 지원
+<template>
+  <div class="app">
+    <ul>
+      <li>테스트메뉴1</li>
+      <li>테스트메뉴2</li>
+      <li>테스트메뉴3</li>
+    </ul>
+  </div>
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+        //data here
+    }
+  }
+} 
+</script>
+
+<style lang="scss">
+.router-link-active {
+  border-bottom: 3px solid #f30765;
+
+  li{
+    color: #f30765;
+  }
+}
+</style>
