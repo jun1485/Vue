@@ -7,3 +7,13 @@
 
 // data 속성을 단일 엘리먼트에 바인딩
 <div v-bind="objectOfAttrs"></div>
+
+
+// JS 표현식
+{{ number + 1 }}
+
+{{ ok ? '예' : '아니오' }}
+
+{{ message.split('').reverse().join('') }}
+
+<div :id="`list-${id}`"></div>
