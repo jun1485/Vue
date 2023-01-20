@@ -17,3 +17,7 @@
 {{ message.split('').reverse().join('') }}
 
 <div :id="`list-${id}`"></div>
+
+<span :title="toTitleDate(date)">
+  {{ formatDate(date) }}
+</span>
