@@ -24,3 +24,8 @@
   {{ formatDate(date) }}
 </span>
 
+
+<a v-on:click="doSomething"> ... </a>
+
+<!-- 단축 문법 -->
+<a @click="doSomething"> ... </a>
