@@ -18,6 +18,9 @@
 
 <div :id="`list-${id}`"></div>
 
+
+// 함수 호출
 <span :title="toTitleDate(date)">
   {{ formatDate(date) }}
 </span>
+
