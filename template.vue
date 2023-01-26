@@ -38,5 +38,5 @@
 <a :[someAttr]="value"> ... </a>
 
 
-// 수식어 (.prevent)
+// 수식어 (.prevent) -> 트리거된 이벤트에서 event.preventDefault()를 호출하도록 v-on디렉티브에 지시.
 <form @submit.prevent="onSubmit">...</form>
