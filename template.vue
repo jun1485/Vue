@@ -36,3 +36,7 @@
 
 // 브라우저에서 속성이름을 소문자로 강제 변환 -> :someattr
 <a :[someAttr]="value"> ... </a>
+
+
+// 수식어 (.prevent)
+<form @submit.prevent="onSubmit">...</form>
