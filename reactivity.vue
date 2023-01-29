@@ -30,3 +30,13 @@ export default {
     this.increment()
   }
 }
+
+
+
+export default {
+  methods: {
+    increment: () => {
+      //  여기서 `this`에 접근할 수 없음
+    }
+  }
+}
