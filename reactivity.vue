@@ -43,3 +43,18 @@ export default {
 }
 
 <button @click="increment">{{ count }}</button>  // methods는 컴포넌트 템플릿 내에서 접근 가능, 주로 이벤트 리스너에서 사용
+
+
+
+import { nextTick } from 'vue'
+
+export default {
+  methods: {
+    increment() {
+      this.count++
+      nextTick(() => {
+        // 업데이트된 DOM에 접근 가능 ( 상태변경 후, DOM 업데이트가 완료된 시점 )
+      })
+    }
+  }
+}
