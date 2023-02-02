@@ -58,3 +58,23 @@ export default {
     }
   }
 }
+
+
+
+export default {
+  data() {
+    return {
+      obj: {
+        nested: { count: 0 },
+        arr: ['foo', 'bar']
+      }
+    }
+  },
+  methods: {
+    mutateDeeply() {
+      // Vue는 기본적으로 반응형 상태를 깊게 추적하므로, 중첩된 객체나 배열의 변경 사항 감지 가능.
+      this.obj.nested.count++
+      this.obj.arr.push('baz')
+    }
+  }
+}
