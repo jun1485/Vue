@@ -78,3 +78,16 @@ export default {
     }
   }
 }
+
+
+// 메서드 상태유지
+import { debounce } from 'lodash-es'
+
+export default {
+  methods: {
+    // Lodash로 디바운싱
+    click: debounce(function () {
+      // ... 클릭에 응답 ...
+    }, 500)
+  }
+}
