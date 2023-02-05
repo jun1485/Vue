@@ -81,6 +81,8 @@ export default {
 
 
 // 메서드 상태유지
+// 여러 컴포넌트가 인스턴스가 동일한 디바운스 함수를 공유하는 경우, 서로를 간섭하게 됨.
+// 디바운스된 함수가 일정 시간이 지나기 전까지 유지되기 때문에 재사용되는 컴포넌트에는 문제가 있음.
 import { debounce } from 'lodash-es'
 
 export default {
