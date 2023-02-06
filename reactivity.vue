@@ -93,3 +93,22 @@ export default {
     }, 500)
   }
 }
+
+
+// 디바운스된 함수를 각각 독립적으로 유지하기 위해 created 훅에서 관리
+export default {
+  created() {
+    // 이제 각 인스턴스는 자체적인 디바운스된 핸들러를 가집니다.
+    this.debouncedClick = _.debounce(this.click, 500)
+  },
+  unmounted() {
+    // 컴포넌트가 제거된 후 
+    // 타이머를 취소하는 것은 좋은 방법입니다.
+    this.debouncedClick.cancel()
+  },
+  methods: {
+    click() {
+      // ... 클릭에 응답 ...
+    }
+  }
+}
