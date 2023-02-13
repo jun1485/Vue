@@ -29,3 +29,20 @@ data() {
     }
   }
 }
+
+
+// computed 에 바인딩 : 일반적인 
+data() {
+  return {
+    isActive: true,
+    error: null
+  }
+},
+computed: {
+  classObject() {
+    return {
+      active: this.isActive && !this.error,
+      'text-danger': this.error && this.error.type === 'fatal'
+    }
+  }
+}
