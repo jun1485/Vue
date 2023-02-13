@@ -31,7 +31,9 @@ data() {
 }
 
 
-// computed 에 바인딩 : 일반적인 
+// computed 에 바인딩 : 일반적인 패턴
+<div :class="classObject"></div>
+
 data() {
   return {
     isActive: true,
