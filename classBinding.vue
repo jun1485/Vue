@@ -48,3 +48,14 @@ computed: {
     }
   }
 }
+
+
+// 배열로 바인딩
+<div :class="[activeClass, errorClass]"></div>
+
+data() {
+  return {
+    activeClass: 'active',
+    errorClass: 'text-danger'
+  }
+}
