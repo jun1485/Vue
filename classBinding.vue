@@ -64,3 +64,4 @@ data() {
 // 삼항연산자로 클래스 토글
 <div :class="[isActive ? activeClass : '', errorClass]"></div>
 
+
