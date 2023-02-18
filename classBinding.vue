@@ -65,3 +65,5 @@ data() {
 <div :class="[isActive ? activeClass : '', errorClass]"></div>
 
 
+// 조건부 클래스 여러개 적용 (배열 구문 내에서 객체 구문 가능)
+<div :class="[{ active: isActive }, errorClass]"></div>
