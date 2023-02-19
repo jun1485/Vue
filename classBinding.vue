@@ -67,3 +67,14 @@ data() {
 
 // 조건부 클래스 여러개 적용 (배열 구문 내에서 객체 구문 가능)
 <div :class="[{ active: isActive }, errorClass]"></div>
+
+
+// 인라인 스타일 바인딩
+<div :style="{ color: activeColor, fontSize: fontSize + 'px' }"></div>
+
+data() {
+  return {
+    activeColor: 'red',
+    fontSize: 30
+  }
+}
