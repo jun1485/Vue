@@ -78,3 +78,16 @@ data() {
     fontSize: 30
   }
 }
+
+
+// 스타일 객체를 직접 바인딩 하는것이 더 깔끔
+<div :style="styleObject"></div>
+
+data() {
+  return {
+    styleObject: {
+      color: 'red',
+      fontSize: '13px'
+    }
+  }
+}
