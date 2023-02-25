@@ -95,3 +95,4 @@ data() {
 
 // 다중 값 제공 가능, 이 경우 브라우저가 지원하는 배열 내 마지막 값을 적용하여 렌더링.
 <div :style="{ display: ['flex', '-webkit-box', '-ms-flexbox'] }"></div>
+
