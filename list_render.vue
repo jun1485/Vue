@@ -8,3 +8,16 @@ data() {
     items: [{ message: 'Foo' }, { message: 'Bar' }]
   }
 }
+
+
+// 
+<li v-for="(item, index) in items">
+  {{ parentMessage }} - {{ index }} - {{ item.message }}
+</li>
+
+data() {
+  return {
+    parentMessage: 'Parent',
+    items: [{ message: 'Foo' }, { message: 'Bar' }]
+  }
+}
