@@ -33,3 +33,4 @@ items.forEach((item, index) => {
   // 반면 `item`과 `index`는 콜백함수 내부에서만 접근 가능.
   console.log(parentMessage, item.message, index)
 })
+
