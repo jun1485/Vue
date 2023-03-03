@@ -34,3 +34,20 @@ items.forEach((item, index) => {
   console.log(parentMessage, item.message, index)
 })
 
+
+// 객체에 v-for 사용
+<ul>
+  <li v-for="value in myObject">
+    {{ value }}
+  </li>
+</ul>
+
+data() {
+  return {
+    myObject: {
+      title: 'Vue에서 목록을 작성하는 방법',
+      author: '홍길동',
+      publishedAt: '2016-04-10'
+    }
+  }
+}
