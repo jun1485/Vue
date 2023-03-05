@@ -51,3 +51,10 @@ data() {
     }
   }
 }
+
+
+// v-for를 key와 함께 사용
+// key에는 문자열, 심볼, 숫자 형식의 값만 바인딩.
+<template v-for="todo in todos" :key="todo.name">
+  <li>{{ todo.name }}</li>
+</template>
