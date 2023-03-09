@@ -6,3 +6,22 @@ export default {
     console.log(this.foo)
   }
 }
+
+
+// 객체 문법 사용도 가능
+export default {
+  props: {
+    title: String,
+    likes: Number
+  }
+}
+
+
+// 템플릿 표현식에서 사용
+<span>{{ greetingMessage }}</span>
+
+export default {
+  props: {
+    greetingMessage: String
+  }
+}
