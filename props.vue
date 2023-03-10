@@ -25,3 +25,11 @@ export default {
     greetingMessage: String
   }
 }
+
+
+// 정적인 값 전달
+<BlogPost title="Vue와 함께한 나의 여행" />
+
+// v-bind를 사용한 동적인 값 전달
+<BlogPost :title="post.title" />
+<BlogPost :title="post.title + ' by ' + post.author.name" />
