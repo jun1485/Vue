@@ -33,3 +33,26 @@ export default {
 // v-bind를 사용한 동적인 값 전달
 <BlogPost :title="post.title" />
 <BlogPost :title="post.title + ' by ' + post.author.name" />
+
+
+// 배열 값 전달
+<!-- 배열이 정적이더라도 Vue에 이것이 문자열이 아닌         -->
+<!-- JavaScript 표현식임을 알려주려면 v-bind가 필요합니다. -->
+<BlogPost :comment-ids="[234, 266, 273]" />
+
+<!-- 변수 값을 동적으로 할당 -->
+<BlogPost :comment-ids="post.commentIds" />
+
+
+// 객체 값 전달
+<!-- 객체가 정적이더라도 Vue에 이것이 문자열이 아닌         -->
+<!-- JavaScript 표현식임을 알려주려면 v-bind가 필요합니다. -->
+<BlogPost
+  :author="{
+    name: '신형만',
+    company: '떡잎 상사'
+  }"
+ />
+
+<!-- 변수 값을 동적으로 할당 -->
+<BlogPost :author="post.author" />
