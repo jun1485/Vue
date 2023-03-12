@@ -56,3 +56,8 @@ export default {
 
 <!-- 변수 값을 동적으로 할당 -->
 <BlogPost :author="post.author" />
+
+// 다음 템플릿을
+<BlogPost :id="post.id" :title="post.title" /> 
+// 아래와 같이 객체 자체를 바인딩도 가능.
+<BlogPost v-bind="post" />
