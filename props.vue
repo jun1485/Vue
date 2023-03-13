@@ -61,3 +61,16 @@ export default {
 <BlogPost :id="post.id" :title="post.title" /> 
 // 아래와 같이 객체 자체를 바인딩도 가능.
 <BlogPost v-bind="post" />
+
+
+// prop을 초기값을 전달하는 데에만 사용
+export default {
+  props: ['initialCounter'],
+  data() {
+    return {
+      // props.initialCounter는 counter의 초기 값으로 사용됩니다.
+      // 추후 props가 갱신되어도 counter 값이 업데이트 되지 않습니다.
+      counter: this.initialCounter
+    }
+  }
+}
