@@ -10,3 +10,7 @@ export default {
     }
   }
 }
+
+<MyComponent @some-event="callback" />
+
+
