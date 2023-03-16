@@ -14,3 +14,15 @@ export default {
 <MyComponent @some-event="callback" />
 
 
+
+// $emit에 추가 인자를 전달하여, 
+<button @click="$emit('increaseBy', 1)">
+  Increase by 1
+</button>
+
+<MyButton @increase-by="(n) => count += n" />   ===   <MyButton @increase-by="increaseCount" />
+// 해당 메서드의 첫 번째 파라미터로 값이 전달됨.
+methods: {
+  increaseCount(n) {
+    this.count += n
+  }
