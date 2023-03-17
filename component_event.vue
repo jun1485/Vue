@@ -26,3 +26,9 @@ methods: {
   increaseCount(n) {
     this.count += n
   }
+
+
+// emits 옵션으로 명시적으로 발신할 이벤트를 선언.
+export default {
+  emits: ['inFocus', 'submit']
+}
