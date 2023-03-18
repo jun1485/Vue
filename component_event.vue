@@ -32,3 +32,11 @@ methods: {
 export default {
   emits: ['inFocus', 'submit']
 }
+
+// emit도 구조분해할당 가능.
+export default {
+  emits: ['inFocus', 'submit'],
+  setup(props, { emit }) {
+    emit('submit')
+  }
+}
