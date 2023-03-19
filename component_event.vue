@@ -40,3 +40,27 @@ export default {
     emit('submit')
   }
 }
+
+
+// 유효성 검사와 객체 구문으로 이벤트 전달
+export default {
+  emits: {
+    // 유효성 검사 없음
+    click: null,
+
+    // submit 이벤트 유효성 검사
+    submit: ({ email, password }) => {
+      if (email && password) {
+        return true
+      } else {
+        console.warn('submit 이벤트 페이로드가 옳지 않음!')
+        return false
+      }
+    }
+  },
+  methods: {
+    submitForm(email, password) {
+      this.$emit('submit', { email, password })
+    }
+  }
+}
