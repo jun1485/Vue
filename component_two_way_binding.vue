@@ -6,3 +6,21 @@
   :value="searchText"
   @input="searchText = $event.target.value"
 />
+
+
+<!-- CustomInput.vue -->
+<script>
+export default {
+  props: ['modelValue'],
+  emits: ['update:modelValue']
+}
+</script>
+
+<template>
+  <input
+    :value="modelValue"
+    @input="$emit('update:modelValue', $event.target.value)"
+  />
+</template>
+
+<CustomInput v-model="searchText" />
