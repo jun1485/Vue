@@ -24,3 +24,20 @@ export default {
 </template>
 
 <CustomInput v-model="searchText" />
+
+
+// v-model을 여러 개 바인딩.
+<UserName
+  v-model:first-name="first"
+  v-model:last-name="last"
+/>
+
+<script>
+export default {
+  props: {
+    firstName: String,
+    lastName: String
+  },
+  emits: ['update:firstName', 'update:lastName']
+}
+</script>
