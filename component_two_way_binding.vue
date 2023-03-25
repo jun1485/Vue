@@ -41,3 +41,14 @@ export default {
   emits: ['update:firstName', 'update:lastName']
 }
 </script>
+
+
+<MyComponent v-model:title.capitalize="myText">
+
+export default {
+  props: ['title', 'titleModifiers'],
+  emits: ['update:title'],
+  created() {
+    console.log(this.titleModifiers) // { capitalize: true }
+  }
+}
