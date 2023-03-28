@@ -13,3 +13,8 @@
   <span style="color:red">클릭하기!</span>
   <AwesomeIcon name="plus" />
 </FancyButton>
+
+
+// 슬롯 컨텐츠는 부모 컴포넌트에 정의되어 있으므로 부모 컴포넌트의 데이터 범위에 접근 가능.
+<span>{{ message }}</span>
+<FancyButton>{{ message }}</FancyButton>
