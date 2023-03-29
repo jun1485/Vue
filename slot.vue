@@ -18,3 +18,14 @@
 // 슬롯 컨텐츠는 부모 컴포넌트에 정의되어 있으므로 부모 컴포넌트의 데이터 범위에 접근 가능.
 <span>{{ message }}</span>
 <FancyButton>{{ message }}</FancyButton>
+
+
+// "제출" 텍스트가 <button> 내부에 렌더링.
+<button type="submit">
+  <slot>
+    제출 <!-- 대체 컨텐츠 -->
+  </slot>
+</button>
+
+// 최종 렌더링 결과.
+<button type="submit">제출</button>
