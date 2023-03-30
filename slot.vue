@@ -29,3 +29,23 @@
 
 // 최종 렌더링 결과.
 <button type="submit">제출</button>
+
+
+// 여러 개의 slot
+<div class="container">
+  <header>
+    <slot name="header"></slot>
+  </header>
+  <main>
+    <slot></slot>
+  </main>
+  <footer>
+    <slot name="footer"></slot>
+  </footer>
+</div>
+
+<BaseLayout>
+  <template v-slot:header>
+    <!-- 헤더 슬롯의 컨텐츠 -->
+  </template>
+</BaseLayout>
