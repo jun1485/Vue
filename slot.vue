@@ -49,3 +49,20 @@
     <!-- 헤더 슬롯의 컨텐츠 -->
   </template>
 </BaseLayout>
+
+
+// 단축 문법을 사용해 세 개의 슬롯  사용.
+<BaseLayout>
+  <template #header>
+    <h1>다음은 페이지 제목일 수 있습니다.</h1>
+  </template>
+
+  <template #default>
+    <p>주요 내용에 대한 단락입니다.</p>
+    <p>그리고 또 하나.</p>
+  </template>
+
+  <template #footer>
+    <p>다음은 연락처 정보입니다.</p>
+  </template>
+</BaseLayout>
