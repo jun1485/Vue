@@ -66,3 +66,18 @@
     <p>다음은 연락처 정보입니다.</p>
   </template>
 </BaseLayout>
+
+:: 최종 렌더링
+
+<div class="container">
+  <header>
+    <h1>다음은 페이지 제목일 수 있습니다.</h1>
+  </header>
+  <main>
+    <p>주요 내용에 대한 단락입니다.</p>
+    <p>그리고 또 하나.</p>
+  </main>
+  <footer>
+    <p>다음은 연락처 정보입니다.</p>
+  </footer>
+</div>
