@@ -81,3 +81,16 @@
     <p>다음은 연락처 정보입니다.</p>
   </footer>
 </div>
+
+
+
+<base-layout>
+  <template v-slot:[dynamicSlotName]>
+    ...
+  </template>
+
+  <!-- 단축 문법 사용 -->
+  <template #[dynamicSlotName]>
+    ...
+  </template>
+</base-layout>
