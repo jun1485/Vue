@@ -74,3 +74,43 @@ export default {
     }
   }
 }
+
+
+// ParentComponent.vue
+<template>
+  <div>
+    <h1>Parent Component</h1>
+    <ChildComponent :message="parentMessage" />
+  </div>
+</template>
+
+<script>
+import ChildComponent from './ChildComponent.vue';
+
+export default {
+  components: {
+    ChildComponent
+  },
+  data() {
+    return {
+      parentMessage: 'Hello from Parent Component'
+    };
+  }
+};
+</script>
+
+// ChildComponent.vue
+<template>
+  <div>
+    <h2>Child Component</h2>
+    <p>{{ message }}</p>
+  </div>
+</template>
+
+<script>
+export default {
+  props: {
+    message: String
+  }
+};
+</script>
