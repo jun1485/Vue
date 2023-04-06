@@ -83,7 +83,6 @@
 </div>
 
 
-
 <base-layout>
   <template v-slot:[dynamicSlotName]>
     ...
