@@ -95,7 +95,6 @@
 </base-layout>
 
 
-
 // 함수의 인자와 마찬가지로, 구조 분해 할당 가능.
 MyComponent v-slot="{ text, count }">
   {{ text }} {{ count }}
