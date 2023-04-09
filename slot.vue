@@ -99,16 +99,3 @@
 MyComponent v-slot="{ text, count }">
   {{ text }} {{ count }}
 </MyComponent>
-
-
-// 컴포넌트에 v-slot 지시자를 직접 배치하면 컴파일 오류가 나기 때문에, <template> 태그 사용.
-<!-- This template won't compile -->
-<template>
-  <MyComponent v-slot="{ message }">
-    <p>{{ message }}</p>
-    <template #footer>
-      <!-- message belongs to the default slot, and is not available here -->
-      <p>{{ message }}</p>
-    </template>
-  </MyComponent>
-</template>
