@@ -41,3 +41,32 @@ export default {
   },
 };
 </script>
+
+// 부모 컴포넌트
+<template>
+  <div>
+    <ChildComponent @update="onUpdate" />
+    <p>받은 데이터: {{ receivedData }}</p>
+  </div>
+</template>
+
+<script>
+import ChildComponent from "./ChildComponent.vue";
+
+export default {
+  components: {
+    ChildComponent,
+  },
+  data() {
+    return {
+      receivedData: "",
+    };
+  },
+  methods: {
+    onUpdate(param1, param2) {
+      // 자식 컴포넌트로부터 받은 파라미터를 활용
+      this.receivedData = `파라미터1: ${param1}, 파라미터2: ${param2}`;
+    },
+  },
+};
+</script>
