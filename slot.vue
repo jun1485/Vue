@@ -99,3 +99,19 @@
 MyComponent v-slot="{ text, count }">
   {{ text }} {{ count }}
 </MyComponent>
+
+
+// 이름, 범위 지정
+<MyComponent>
+  <template #header="headerProps">
+    {{ headerProps }}
+  </template>
+
+  <template #default="defaultProps">
+    {{ defaultProps }}
+  </template>
+
+  <template #footer="footerProps">
+    {{ footerProps }}
+  </template>
+</MyComponent>
