@@ -115,3 +115,13 @@ MyComponent v-slot="{ text, count }">
     {{ footerProps }}
   </template>
 </MyComponent>
+
+
+<FancyList :api-url="url" :per-page="10">
+  <template #item="{ body, username, likes }">
+    <div class="item">
+      <p>{{ body }}</p>
+      <p>by {{ username }} | {{ likes }} likes</p>
+    </div>
+  </template>
+</FancyList>
