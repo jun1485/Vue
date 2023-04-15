@@ -41,3 +41,20 @@ export default {
     <p>입력 값: {{ inputValue }}</p>
   </div>
 </template>
+<script>
+import { ref } from 'vue';
+import ChildComponent from './ChildComponent.vue';
+
+export default {
+  components: {
+    ChildComponent,
+  },
+  setup() {
+    const inputValue = ref('');
+
+    return {
+      inputValue,
+    };
+  },
+};
+</script>
