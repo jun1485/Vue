@@ -33,3 +33,11 @@ export default {
 };
 </script>
 
+
+// 부모 컴포넌트 
+<template>
+  <div>
+    <ChildComponent v-model="inputValue" />
+    <p>입력 값: {{ inputValue }}</p>
+  </div>
+</template>
