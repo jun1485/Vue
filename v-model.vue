@@ -17,6 +17,7 @@ export default {
 </script>
 
 
+// modelValue, update:modelValue
 // 자식 컴포넌트
 <template>
   <input
