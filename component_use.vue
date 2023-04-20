@@ -54,3 +54,18 @@ export const todoListModel = reactive({
     this.todos.splice(index, 1);
   },
 });
+
+// view
+<template>
+  <div>
+    <h2>Todo List</h2>
+    <ul>
+      <li v-for="(todo, index) in todos" :key="index">
+        {{ todo }}
+        <button @click="removeTodo(index)">Remove</button>
+      </li>
+    </ul>
+    <input type="text" v-model="newTodo" />
+    <button @click="addTodo">Add</button>
+  </div>
+</template>
