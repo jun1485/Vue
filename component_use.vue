@@ -87,3 +87,13 @@ export function useTodoList() {
   function removeTodo(index) {
     todoListModel.removeTodo(index);
   }
+
+  const todos = computed(() => todoListModel.todos);
+
+  return {
+    newTodo,
+    addTodo,
+    removeTodo,
+    todos,
+  };
+}
