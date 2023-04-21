@@ -39,6 +39,24 @@ export default {
 </script>
 
 
+// 다른 컴포넌트에서 사용
+<template>
+  <div>
+    <my-component />
+  </div>
+</template>
+
+<script>
+import MyComponent from './MyComponent.vue';
+
+export default {
+  components: {
+    'my-component': MyComponent
+  }
+}
+</script>
+
+
 // 컴포넌트는 왜 만드는가? 재사용하는 목적이 무엇인가? 를 고려하여 설계한다.
 // 다른 사용자가 사용할 컴포넌트를 만든다고 생각하고, 그 사용자가 필요할 만한(커스텀) 것들을 생각해서 만든다.
 
