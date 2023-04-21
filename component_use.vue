@@ -69,3 +69,21 @@ export const todoListModel = reactive({
     <button @click="addTodo">Add</button>
   </div>
 </template>
+
+// controller
+import { ref, computed } from 'vue';
+import { todoListModel } from './model';
+
+export function useTodoList() {
+  const newTodo = ref('');
+
+  function addTodo() {
+    if (newTodo.value) {
+      todoListModel.addTodo(newTodo.value);
+      newTodo.value = '';
+    }
+  }
+
+  function removeTodo(index) {
+    todoListModel.removeTodo(index);
+  }
