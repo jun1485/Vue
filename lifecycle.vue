@@ -1,3 +1,7 @@
+// 마운트란, 뷰에서 컴포넌트 인스턴스가 생성되고, 이 인스턴스가 실제 DOM과 연결되는 과정.
+// 컴포넌트가 마운트 되면 해당 컴포넌트의 데이터와 메소드들이 DOM과 연결되어 사용자가 볼 수 있음.
+
+
 import { ref, onMounted, onUpdated, onUnmounted } from 'vue';
 
 export default {
