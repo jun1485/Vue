@@ -1,7 +1,7 @@
 // 객체로 바인딩
 <div :class="{ active: isActive }"></div>
 
-ㅇ
+
 <div
   class="static"
   :class="{ active: isActive, 'text-danger': hasError }"
