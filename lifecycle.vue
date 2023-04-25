@@ -2,6 +2,34 @@
 // 컴포넌트가 마운트 되면 해당 컴포넌트의 데이터와 메소드들이 DOM과 연결되어 사용자가 볼 수 있음.
 
 
+// onMounted
+import { onBeforeMount } from 'vue';
+
+export default {
+  setup() {
+    // 데이터를 초기화합니다.
+    const initData = () => {
+      console.log('데이터를 초기화합니다.');
+    };
+
+    // 외부 API에서 데이터를 가져옵니다.
+    const fetchData = async () => {
+      console.log('외부 API에서 데이터를 가져옵니다.');
+      // API 호출을 수행하는 코드를 작성합니다.
+    };
+
+    onBeforeMount(() => {
+      initData();
+      fetchData();
+    });
+
+    return {
+      // 다른 데이터와 메서드를 반환합니다.
+    };
+  },
+};
+
+//
 import { ref, onMounted, onUpdated, onUnmounted } from 'vue';
 
 export default {
@@ -30,3 +58,5 @@ export default {
     };
   },
 };
+
+
