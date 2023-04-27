@@ -2,7 +2,9 @@
 // 컴포넌트가 마운트 되면 해당 컴포넌트의 데이터와 메소드들이 DOM과 연결되어 사용자가 볼 수 있음.
 
 
-// onMounted
+// onBeforeMounted
+// 컴포넌트 초기화에 대한 작업, 외부 데이터를 불러오는 작업.
+// DOM에 접근하는 것은 불가능
 import { onBeforeMount } from 'vue';
 
 export default {
@@ -60,3 +62,4 @@ export default {
 };
 
 
+// onBeforeMount
