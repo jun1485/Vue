@@ -2,7 +2,7 @@
 // 컴포넌트가 마운트 되면 해당 컴포넌트의 데이터와 메소드들이 DOM과 연결되어 사용자가 볼 수 있음.
 
 
-// onBeforeMounted
+// onBeforeMount
 // 컴포넌트 초기화에 대한 작업, 외부 데이터를 불러오는 작업.
 // DOM에 접근하는 것은 불가능
 import { onBeforeMount } from 'vue';
@@ -62,4 +62,25 @@ export default {
 };
 
 
-// onBeforeMount
+// onMounted
+export default {
+  setup() {
+    const message = ref('');
+
+    const fetchData = async () => {
+      console.log('외부 API에서 데이터를 가져옵니다.');
+      // 외부 API 호출을 수행하는 코드를 작성합니다.
+      // 예를 들어, API 결과를 message에 저장합니다.
+      message.value = 'API에서 가져온 데이터';
+    };
+
+    onMounted(() => {
+      console.log('컴포넌트가 마운트되었습니다.');
+      fetchData();
+    });
+
+    return {
+      message
+    };
+  },
+};
