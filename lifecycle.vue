@@ -63,6 +63,8 @@ export default {
 
 
 // onMounted
+// 컴포넌트가 마운트되어 실제 DOM에 삽입된 직후에 호출되는 함수.
+// 컴포넌트의 인스턴스가 실제 DOM과 연결된 시점에서 호출되므로, DOM 요소에 접근하거나 외부 라이브러리를 초기화하는 작업 수행 가능.
 export default {
   setup() {
     const message = ref('');
