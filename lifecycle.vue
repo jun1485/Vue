@@ -90,3 +90,28 @@ export default {
 // onBeforeUpdate
 // 컴포넌트가 다시 렌더링되기 직전에 호출되는 함수. ( 컴포넌트의 데이터가 변경되어 DOM이 새로 생성되기 전에 호출 )
 // 컴포넌트의 변경 사항을 가로채거나, 변경 전의 데이터 저장 작업 가능.
+
+import { ref, onBeforeUpdate } from 'vue';
+
+export default {
+  setup() {
+    const count = ref(0);
+    let previousCount = 0;
+
+    const increment = () => {
+      previousCount = count.value; // 변경 전의 데이터를 저장합니다.
+      count.value++;
+    };
+
+    onBeforeUpdate(() => {
+      console.log('컴포넌트가 업데이트되기 전입니다.');
+      console.log('이전 count 값:', previousCount);
+      console.log('현재 count 값:', count.value);
+    });
+
+    return {
+      count,
+      increment
+    };
+  },
+};
