@@ -118,3 +118,17 @@ export default {
 
 
 // onUpdated
+import { onBeforeUnmount } from 'vue';
+
+export default {
+  setup() {
+    const intervalId = setInterval(() => {
+      console.log('인터벌 작동 중...');
+    }, 1000);
+
+    onBeforeUnmount(() => {
+      console.log('컴포넌트가 언마운트되기 전입니다.');
+      clearInterval(intervalId); // 인터벌 정리 작업 수행
+    });
+  },
+};
