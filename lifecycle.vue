@@ -117,10 +117,10 @@ export default {
 };
 
 
+// onUpdated
 // 컴포넌트가 업데이트 되고 난 뒤에 호출되는 함수.
 // 컴포넌트의 데이터가 변경되어 가상 DOM이 새로 생성되고, 이 변경사항이 실제 DOM에 적용된 직후에 호출.
 // 변경된 데이터에 따른 DOM 조작이나, 외부 라이브러리 연동 작업 수행 가능.
-// onUpdated
 
 import { onBeforeUnmount } from 'vue';
 
