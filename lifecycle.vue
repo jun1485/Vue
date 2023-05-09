@@ -137,3 +137,7 @@ export default {
   },
 };
 
+
+// onBeforeUnmount
+// 컴포넌트가 제거되기 직전에 호출되는 함수.
+// 
