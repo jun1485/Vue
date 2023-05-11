@@ -157,3 +157,7 @@ export default {
     });
   },
 };
+
+
+// onUnmounted
+// 컴포넌트가 완전히 제거된 직후에 호출되는 함수.
