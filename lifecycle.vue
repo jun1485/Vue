@@ -162,3 +162,15 @@ export default {
 // onUnmounted
 // 컴포넌트가 완전히 제거된 직후에 호출되는 함수.
 // 컴포넌트가 해제된 이후에 필요한 마무리 작업이나 로깅 등을 수행.
+
+import { onUnmounted } from 'vue';
+
+export default {
+  setup() {
+    // ...
+    onUnmounted(() => {
+      console.log('컴포넌트가 완전히 언마운트되었습니다.');
+      // 필요한 마무리 작업이나 로깅 등을 수행할 수 있습니다.
+    });
+  },
+};
