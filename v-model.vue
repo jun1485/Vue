@@ -59,3 +59,27 @@ export default {
   },
 };
 </script>
+
+
+
+<template>
+  <input :value="modelValue" @input="updateValue" />
+</template>
+
+<script>
+import { ref, watchEffect } from 'vue';
+
+export default {
+  props: ['modelValue'],
+  emits: ['update:modelValue'],
+  setup(props, { emit }) {
+    const updateValue = (event) => {
+      emit('update:modelValue', event.target.value);
+    };
+
+    return {
+      updateValue
+    };
+  }
+}
+</script>
