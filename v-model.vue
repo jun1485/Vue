@@ -61,7 +61,7 @@ export default {
 </script>
 
 
-
+// 자식 컴포넌트
 <template>
   <input :value="modelValue" @input="updateValue" />
 </template>
@@ -79,6 +79,29 @@ export default {
 
     return {
       updateValue
+    };
+  }
+}
+</script>
+
+// 부모 컴포넌트
+<template>
+  <child-component v-model="parentData" />
+</template>
+
+<script>
+import { ref } from 'vue';
+import ChildComponent from './ChildComponent.vue';
+
+export default {
+  components: {
+    ChildComponent
+  },
+  setup() {
+    const parentData = ref('');
+
+    return {
+      parentData
     };
   }
 }
