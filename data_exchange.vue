@@ -21,3 +21,13 @@ export default {
 }
 </script>
 
+// 부모 컴포넌트
+<template>
+  <grand-child-component :modelValue="modelValue" @update:modelValue="updateValue" />
+</template>
+
+<script>
+import GrandChildComponent from './GrandChildComponent.vue';
+
+export default {}
+</script>
