@@ -1,0 +1,23 @@
+// 손자 컴포넌트
+<template>
+  <button @click="updateValue">{{ modelValue }}</button>
+</template>
+
+<script>
+import { ref } from 'vue';
+
+export default {
+  props: ['modelValue'],
+  emits: ['update:modelValue'],
+  setup(props, { emit }) {
+    const updateValue = () => {
+      emit('update:modelValue', props.modelValue + 1);
+    };
+
+    return {
+      updateValue
+    };
+  }
+}
+</script>
+
