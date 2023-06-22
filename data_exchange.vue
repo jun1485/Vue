@@ -29,5 +29,20 @@ export default {
 <script>
 import GrandChildComponent from './GrandChildComponent.vue';
 
-export default {}
+export default {
+  components: {
+    GrandChildComponent
+  },
+  props: ['modelValue'],
+  emits: ['update:modelValue'],
+  setup(props, { emit }) {
+    const updateValue = (value) => {
+      emit('update:modelValue', value);
+    };
+
+    return {
+      updateValue
+    };
+  }
+}
 </script>
