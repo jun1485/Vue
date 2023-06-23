@@ -46,3 +46,10 @@ export default {
   }
 }
 </script>
+
+// 할아버지 컴포넌트
+<template>
+  <parent-component :modelValue="data" @update:modelValue="data = $event" />
+</template>
+
+<script></script>
