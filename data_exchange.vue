@@ -52,4 +52,19 @@ export default {
   <parent-component :modelValue="data" @update:modelValue="data = $event" />
 </template>
 
-<script></script>
+<script>
+  import { ref } from 'vue';
+import ParentComponent from './ParentComponent.vue';
+
+export default {
+  components: {
+    ParentComponent
+  },
+  setup() {
+    const data = ref(0);
+
+    return {
+      data    };
+  }
+}
+</script>
