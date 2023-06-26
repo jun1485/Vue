@@ -60,11 +60,13 @@ export default {
   components: {
     ParentComponent
   },
+  
   setup() {
     const data = ref(0);
 
     return {
-      data    };
+      data    
+    };
   }
 }
 </script>
