@@ -114,3 +114,15 @@ export default {
   }
 };
 </script>
+
+
+// props 정의
+export default {
+  props: {
+    title: String,
+    likes: Number,
+    isPublished: Boolean,
+    commentIds: Array,
+    author: Object
+  }
+}
