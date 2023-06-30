@@ -126,3 +126,22 @@ export default {
     author: Object
   }
 }
+
+// props 검증
+export default {
+  props: {
+    value: {
+      type: Number,
+      required: true,
+      validator: function (value) {
+        return value >= 0
+      }
+    }
+  }
+}
+
+// 전달된 데이터 직접 사용
+<template>
+  <h1>{{ title }}</h1>
+</template>
+
