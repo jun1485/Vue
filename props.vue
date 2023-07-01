@@ -142,6 +142,16 @@ export default {
 
 // 전달된 데이터 직접 사용
 <template>
-  <h1>{{ title }}</h1>
+  // <h1>{{ title }}</h1>
+  
+  // <child-component :title="blogTitle" />
 </template>
 
+export default {
+  props: ['initialCounter'],
+  data() {
+    return {
+      counter: this.initialCounter
+    }
+  }
+}
