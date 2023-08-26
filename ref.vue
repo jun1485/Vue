@@ -9,3 +9,11 @@ const count = ref(0); // 초기값 0
 // 스크립트에서 사용
 count.value++; // 값 증가
 
+import { reactive } from 'vue';
+
+const state = reactive({
+  count: 0,
+  info: {
+    name: 'Vue'
+  }
+});
