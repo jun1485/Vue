@@ -17,3 +17,11 @@ const state = reactive({
     name: 'Vue'
   }
 });
+
+// 템플릿에서 사용
+// {{ state.count }}
+// {{ state.info.name }}
+
+// 스크립트에서 사용
+state.count++; // 값 증가
+state.info.name = 'Vue 3'; // 중첩된 값 변경
