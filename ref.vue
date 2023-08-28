@@ -30,3 +30,6 @@ const state = reactive({
 // 스크립트에서 사용
 state.count++; // 값 증가
 state.info.name = 'Vue 3'; // 중첩된 값 변경
+
+
+// 원시 값이나 단일 값에는 ref를, 복잡한 객체 상태에는 reactive를 사용.
