@@ -3,3 +3,9 @@
 const state = reactive({ count: 0 });
 state.newProp = 'Not reactive';  // 반응성을 가지지 않음
 
+// 위 문제를 해결하기 위해서, Vue.set함수를 사용하거나 새로운 객체를 할당해야 함.
+// Vue.set을 사용하는 방법 (Vue 2에서 유용)
+// Vue.set(state, 'newProp', 'Now reactive');
+
+// 새 객체 할당
+state = reactive({ ...state, newProp: 'Now reactive' });
