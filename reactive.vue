@@ -9,5 +9,3 @@ state.newProp = 'Not reactive';  // 반응성을 가지지 않음
 
 // 새 객체 할당
 state = reactive({ ...state, newProp: 'Now reactive' });
-
-reserved
