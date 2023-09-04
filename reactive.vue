@@ -9,3 +9,7 @@ state.newProp = 'Not reactive';  // 반응성을 가지지 않음
 
 // 새 객체 할당
 state = reactive({ ...state, newProp: 'Now reactive' });
+
+
+// reactive 객체를 구조분해하면, 해당 property는 반응성을 잃는다.
+const { count } = reactive({ count: 0 });  // 이제 count는 반응성을 가지지 않음
