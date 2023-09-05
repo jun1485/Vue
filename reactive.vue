@@ -13,3 +13,9 @@ state = reactive({ ...state, newProp: 'Now reactive' });
 
 // reactive 객체를 구조분해하면, 해당 property는 반응성을 잃는다.
 const { count } = reactive({ count: 0 });  // 이제 count는 반응성을 가지지 않음
+
+// 위 문제를 해결하기 위해  toRefs, toRef를 사용.
+import { toRefs } from 'vue';
+
+const state = reactive({ count: 0, name: 'Vue' });
+const { count, name } = toRefs(state);
