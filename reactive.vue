@@ -19,3 +19,8 @@ import { toRefs } from 'vue';
 
 const state = reactive({ count: 0, name: 'Vue' });
 const { count, name } = toRefs(state);
+
+
+// 배열의 index를 통해 직접 값을 변경하면, 그 변경은 반응성이 아닐 수 있음.
+const state = reactive({ numbers: [1, 2, 3] });
+state.numbers[0] = 10;  // 이 변경은 반응형이 아닐 수 있음
