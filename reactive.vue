@@ -24,3 +24,10 @@ const { count, name } = toRefs(state);
 // 배열의 index를 통해 직접 값을 변경하면, 그 변경은 반응성이 아닐 수 있음.
 const state = reactive({ numbers: [1, 2, 3] });
 state.numbers[0] = 10;  // 이 변경은 반응형이 아닐 수 있음
+
+// 반응성을 유지하려면, 배열 메소드를 사용하거나 전체 배열을 새로 할당해야 함.
+// 메소드 사용
+state.numbers.splice(0, 1, 10);
+
+// 전체 배열 새로 할당
+state.numbers = [...state.numbers];
