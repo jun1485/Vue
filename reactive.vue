@@ -31,3 +31,5 @@ state.numbers.splice(0, 1, 10);
 
 // 전체 배열 새로 할당
 state.numbers = [...state.numbers];
+// 이런 경우는 vue3 반응성 시스템의 특성과 JS언어의 한계로 인해 발생.
+// 따라서, 반응성을 유지하려면 명시적으로 처리해야 함.
