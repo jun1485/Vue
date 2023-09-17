@@ -18,3 +18,13 @@ export default function useCounter(initialValue = 0) {
     decrement
   };
 }
+
+
+// useFetch.ts
+import { ref, Ref } from 'vue';
+
+interface FetchState<T> {
+  data: Ref<T | null>;
+  isLoading: Ref<boolean>;
+  error: Ref<any>;
+}
