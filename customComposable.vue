@@ -28,3 +28,15 @@ interface FetchState<T> {
   isLoading: Ref<boolean>;
   error: Ref<any>;
 }
+
+  export default function useFetch<T>(url: string): FetchState<T> {
+  const data = ref<T | null>(null);
+  const isLoading = ref<boolean>(true);
+  const error = ref<any>(null);
+
+    return {
+    data,
+    isLoading,
+    error
+  };
+}
