@@ -29,12 +29,23 @@ interface FetchState<T> {
   error: Ref<any>;
 }
 
-  export default function useFetch<T>(url: string): FetchState<T> {
+export default function useFetch<T>(url: string): FetchState<T> {
   const data = ref<T | null>(null);
   const isLoading = ref<boolean>(true);
   const error = ref<any>(null);
 
-    return {
+  fetch(url)
+    .then((response) => response.json())
+    .then((result) => {
+      data.value = result;
+      isLoading.value = false;
+    })
+    .catch((err) => {
+      error.value = err;
+      isLoading.value = false;
+    });
+
+  return {
     data,
     isLoading,
     error
