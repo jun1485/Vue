@@ -51,3 +51,19 @@ export default function useFetch<T>(url: string): FetchState<T> {
     error
   };
 }
+
+<script setup lang="ts">
+import useFetch from '@/composables/useFetch';
+
+const { data, isLoading, error } = useFetch<{ name: string; }>('https://api.example.com/data');
+</script>
+
+<template>
+  <div>
+    <div v-if="isLoading">Loading...</div>
+    <div v-else-if="error">Error: {{ error }}</div>
+    <div v-else>
+      Name: {{ data?.name }}
+    </div>
+  </div>
+</template>
