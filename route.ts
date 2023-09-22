@@ -1,22 +1,17 @@
+// router/index.ts
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
-import Home from '../views/Home.vue';
+import UserProfile from '../views/UserProfile.vue';
+import ProductDetail from '../views/ProductDetail.vue';
 
-const routes: Array<RouteRecordRaw> = [
+const routes: RouteRecordRaw[] = [
   {
-    path: '/',
-    name: 'Home',
-    component: Home
+    path: '/user/:username',
+    name: 'UserProfile',
+    component: UserProfile,
+    props: route => ({ username: route.params.username })
   },
-  {
-    path: '/about',
-    name: 'About',
-    component: () => import('../views/About.vue')
-  }
-];
 
-const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  const router = createRouter({
+  history: createWebHistory(),
   routes
-});
-
-export default router;
+]
