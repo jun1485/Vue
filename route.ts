@@ -28,4 +28,22 @@ const router = createRouter({
 export default router;
 
 
-// 동적 세그먼트 사용
+// 동적 세그먼트 값을 컴포넌트에서 사용
+// views/UserProfile.vue
+<script setup lang="ts">
+import { ref, onMounted } from 'vue';
+import { useRoute } from 'vue-router';
+
+const route = useRoute();
+const username = ref(route.params.username);
+
+onMounted(() => {
+  // API 호출 등의 로직
+});
+</script>
+
+<template>
+  <div>
+    <h1>{{ username }}'s Profile</h1>
+  </div>
+</template>
