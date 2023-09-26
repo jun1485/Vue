@@ -47,3 +47,11 @@ onMounted(() => {
     <h1>{{ username }}'s Profile</h1>
   </div>
 </template>
+
+// views/ProductDetail.vue
+<script setup lang="ts">
+import { ref, onMounted } from 'vue';
+import { useRoute } from 'vue-router';
+
+const route = useRoute();
+const id = ref(Number(route.params.id));
