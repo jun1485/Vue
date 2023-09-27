@@ -55,3 +55,14 @@ import { useRoute } from 'vue-router';
 
 const route = useRoute();
 const id = ref(Number(route.params.id));
+
+onMounted(() => {
+  // 상품 정보 API 호출 등
+});
+</script>
+
+<template>
+  <div>
+    <h1>Product ID: {{ id }}</h1>
+  </div>
+</template>
