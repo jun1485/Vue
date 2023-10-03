@@ -31,6 +31,18 @@ const routes = [
         path: ':id',
         component: User,
         props: true,
+        children: [
+          {
+            path: 'posts',
+            component: () => import('@/components/UserPosts.vue'),
+            props: true
+          },
+          {
+            path: 'posts/:postId',
+            component: () => import('@/components/SinglePost.vue'),
+            props: true
+          }
+        ]
       }
     ]
   }
