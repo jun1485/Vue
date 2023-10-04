@@ -54,3 +54,16 @@ const router = createRouter({
 });
 
 export default router;
+
+
+// views/Users.vue
+<template>
+  <div>
+    <h1>Users</h1>
+    <UserList />
+  </div>
+</template>
+
+<script setup lang="ts">
+import UserList from '@/components/UserList.vue';
+</script>
