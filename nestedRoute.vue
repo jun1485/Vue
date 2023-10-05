@@ -67,3 +67,21 @@ export default router;
 <script setup lang="ts">
 import UserList from '@/components/UserList.vue';
 </script>
+
+
+// views/User.vue
+<template>
+  <div>
+    <UserProfile :id="id" />
+    <router-view :id="id" />
+  </div>
+</template>
+
+<script setup lang="ts">
+import { ref } from 'vue';
+import { useRoute } from 'vue-router';
+import UserProfile from '@/components/UserProfile.vue';
+
+const route = useRoute();
+const id = ref(route.params.id);
+</script>
