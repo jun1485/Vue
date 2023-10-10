@@ -22,3 +22,17 @@ const items = ref([
   { id: 3, text: "Cherry" }
 ]);
 </script>
+
+
+// computed는 계산된 속성을 정의, 내부적으로 캐싱을 수행.
+// 캐싱? 결과값을 메모리에 임시 저장하여, 다음에 동일한 계산이 요청될 경우 빠르게 결과를 반환하는 기술.
+<template>
+  <div>{{ reversedMessage }}</div>
+</template>
+
+<script setup lang="ts">
+import { ref, computed } from 'vue'
+
+const message = ref('Hello Vue!')
+const reversedMessage = computed(() => message.value.split('').reverse().join(''))
+</script>
