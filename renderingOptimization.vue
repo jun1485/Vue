@@ -33,6 +33,10 @@ const items = ref([
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 
-const message = ref('Hello Vue!')
+const message = ref('Hello Vue!') // message 값이 변경되지 않으면 reversedMessage도 다시 계산되지 않음.(이전 값 캐싱)
 const reversedMessage = computed(() => message.value.split('').reverse().join(''))
 </script>
+
+import { defineAsyncComponent } from 'vue'
+
+const MyAsyncComponent = defineAsyncComponent(() => import('./MyAsyncComponent.vue'))
