@@ -37,6 +37,21 @@ const message = ref('Hello Vue!') // message 값이 변경되지 않으면 rever
 const reversedMessage = computed(() => message.value.split('').reverse().join(''))
 </script>
 
+
+// defineAsyncComponent는 비동기 컴포넌트를 쉽게 생성할 수 있게 하는 함수.
+// 웹팩의 코드 분할, 레이지 로딩 등 기능을 쉽게 구현 가능.
 import { defineAsyncComponent } from 'vue'
 
 const MyAsyncComponent = defineAsyncComponent(() => import('./MyAsyncComponent.vue'))
+
+<template>
+  <div>
+    <MyAsyncComponent v-if="showComponent" />
+  </div>
+</template>
+
+<script setup lang="ts">
+import { defineAsyncComponent, ref } from 'vue'
+
+const showComponent = ref(true)
+const MyAsyncC
