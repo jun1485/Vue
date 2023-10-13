@@ -54,4 +54,13 @@ const MyAsyncComponent = defineAsyncComponent(() => import('./MyAsyncComponent.v
 import { defineAsyncComponent, ref } from 'vue'
 
 const showComponent = ref(true)
-const MyAsyncC
+const MyAsyncComponent = defineAsyncComponent(() => import('./MyAsyncComponent.vue'))
+
+const MyAsyncComponent = defineAsyncComponent({
+  loader: () => import('./MyAsyncComponent.vue'),
+  loadingComponent: LoadingComponent,
+  errorComponent: ErrorComponent,
+  delay: 200, // 200ms 지연 후 loadingComponent를 보여줍니다.
+  timeout: 3000, // 3초 후에 로딩이 완료되지 않으면 errorComponent를 보여줍니다.
+})
+</script>
