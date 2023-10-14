@@ -50,6 +50,7 @@ const MyAsyncComponent = defineAsyncComponent(() => import('./MyAsyncComponent.v
   </div>
 </template>
 
+// defineAsyncComponent의 옵션으로 컴포넌트를 로딩하는 동안 다른 컴포넌트를 보여주거나, 로딩에 실패했을 경우 처리 가능
 <script setup lang="ts">
 import { defineAsyncComponent, ref } from 'vue'
 
@@ -64,3 +65,7 @@ const MyAsyncComponent = defineAsyncComponent({
   timeout: 3000, // 3초 후에 로딩이 완료되지 않으면 errorComponent를 보여줍니다.
 })
 </script>
+
+
+// v-memo는 컴포넌트 렌더링을 최적화하기 위해 사용됨.
+// 주어진 배열의 값이 이전 렌더링에서 변경되지 않았을 경우 해당 컴포넌트나 엘리멘트의 리렌더링을 건너뜀.
