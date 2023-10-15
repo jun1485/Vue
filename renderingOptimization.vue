@@ -69,3 +69,17 @@ const MyAsyncComponent = defineAsyncComponent({
 
 // v-memo는 컴포넌트 렌더링을 최적화하기 위해 사용됨.
 // 주어진 배열의 값이 이전 렌더링에서 변경되지 않았을 경우 해당 컴포넌트나 엘리멘트의 리렌더링을 건너뜀.
+<div v-memo="[someProp, someOtherProp]">
+  <!-- 컨텐츠 -->
+</div>
+
+// v-memo 예시
+<script setup lang="ts">
+import { ref } from 'vue'
+
+const items = ref([
+  { id: 1, name: 'Apple' },
+  { id: 2, name: 'Banana' },
+  // ...
+])
+</script>
