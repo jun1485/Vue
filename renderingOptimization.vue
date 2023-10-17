@@ -74,6 +74,14 @@ const MyAsyncComponent = defineAsyncComponent({
 </div>
 
 // v-memo 예시
+<template>
+  <ul>
+    <li v-for="item in items" :key="item.id" v-memo="[item.name]">
+      {{ item.name }}
+    </li>
+  </ul>
+</template>
+
 <script setup lang="ts">
 import { ref } from 'vue'
 
