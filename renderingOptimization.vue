@@ -73,11 +73,12 @@ const MyAsyncComponent = defineAsyncComponent({
   <!-- 컨텐츠 -->
 </div>
 
+// v-memo는 최상위 루트 노드에만 적용 가능.
 // v-memo 예시
 <template>
   <ul>
     <li v-for="item in items" :key="item.id" v-memo="[item.name]">
-      {{ item.name }}
+      {{ item.name }} // item.name 이 변경되지 않으면 리렌더링 되지 않음.
     </li>
   </ul>
 </template>
@@ -91,3 +92,7 @@ const items = ref([
   // ...
 ])
 </script>
+
+
+const state = reactive({ name: 'Alice' })
+state.age = 30 // 'age' 프로퍼티는 반응성을 가지지 X
