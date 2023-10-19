@@ -94,5 +94,10 @@ const items = ref([
 </script>
 
 
+// Vue 인스턴스가 생성될 때 없던 property를 나중에 추가한 경우, 해당 property는 반응성을 가지지 않음.
 const state = reactive({ name: 'Alice' })
 state.age = 30 // 'age' 프로퍼티는 반응성을 가지지 X
+
+// 배열의 index를 직접 변경하는 것을 감지 X
+const items = reactive([1, 2, 3])
+items[0] = 4 // 변경이 감지되지 않습니다.
