@@ -85,3 +85,4 @@ import UserProfile from '@/components/UserProfile.vue';
 const route = useRoute();
 const id = ref(route.params.id);
 </script>
+
