@@ -101,3 +101,6 @@ state.age = 30 // 'age' 프로퍼티는 반응성을 가지지 X
 // 배열의 index를 직접 변경하는 것을 감지 X
 const items = reactive([1, 2, 3])
 items[0] = 4 // 변경이 감지되지 않습니다.
+
+// Object.freeze()를 사용해 객체가 동결되면 해당 객체의 property는 반응성을 가지지 X
+const state = reactive(Object.freeze({ name: 'Alice' }))
