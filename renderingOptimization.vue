@@ -104,3 +104,19 @@ items[0] = 4 // 변경이 감지되지 않습니다.
 
 // Object.freeze()를 사용해 객체가 동결되면 해당 객체의 property는 반응성을 가지지 X
 const state = reactive(Object.freeze({ name: 'Alice' }))
+
+
+<script setup lang="ts">
+import { reactive } from 'vue';
+
+const arr = reactive([1, 2, 3]);
+
+// 배열 요소 추가
+arr.push(4);
+
+// 배열 요소 제거
+arr.splice(0, 1);
+
+// 배열 요소 변경
+arr[0] = 10;
+</script>
