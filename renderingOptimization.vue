@@ -111,6 +111,7 @@ import { reactive } from 'vue';
 
 const arr = reactive([1, 2, 3]);
 
+// 배열 변경 ( 자동으로 반응성 유지 )
 // 배열 요소 추가
 arr.push(4);
 
