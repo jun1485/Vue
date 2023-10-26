@@ -7,4 +7,17 @@ const target = {
   age: 30
 };
 
-const handler = {}
+const handler = {
+  get: function(obj, prop) {
+    if (prop in obj) {
+      return obj[prop];
+    }
+    return "Property does not exist.";
+  }
+};
+
+const proxy = new Proxy(target, handler);
+
+console.log(proxy.name);  // Alice
+console.log(proxy.age);   // 30
+console.log(proxy.job);   // "Property does not exist."
