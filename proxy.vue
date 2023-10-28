@@ -27,3 +27,14 @@ console.log(proxy.job);   // "Property does not exist."
 // Deep Reactive: 깊은 중첩 객체도 자동으로 반응성 부여
 // 배열의 반응성: 배열에 대한 반응성도 효율적으로 다룸.
 // Map, Set 지원: ES6 데이터 타입도 반응성 지원
+
+<script setup lang="ts">
+import { reactive } from "vue";
+
+const state = reactive({
+  count: 0,
+  name: "Alice"
+});
+
+// 내부적으로 Proxy를 사용하여 state 객체는 반응성을 가짐
+</script>
