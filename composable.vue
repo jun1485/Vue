@@ -46,3 +46,9 @@ export function useMousePosition() {
 
   return { x, y }
 }
+
+
+// 현재 날짜와 시간을 실시간으로 업데이트
+<!-- useDateTime.ts -->
+<script setup lang="ts">
+import { ref, watchEffect } from 'vue';
