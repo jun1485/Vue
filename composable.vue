@@ -1,5 +1,5 @@
 // 컴포저블이란, 여러 컴포넌트에서 공유할 수 있는 vue.js 함수.
-// 컴포저블은 로직을 캡슐화하고 재사용하는데 사용.
+// 컴포저블은 로직을 캡슐화하고 재사용하는데 사용. ( 코드의 재사용성, 관리성을 높임 )
 // ex. API 호출, 유효성 검사, 상태 관리 등 공통 로직을 컴포저블로 작성하고 여러 컴포넌트에서 재사용.
 
 import { ref, onMounted } from 'vue'
@@ -52,3 +52,22 @@ export function useMousePosition() {
 <!-- useDateTime.ts -->
 <script setup lang="ts">
 import { ref, watchEffect } from 'vue';
+
+  export function useDateTime() {
+  const date = ref(new Date());
+
+  watchEffect(() => {
+    const timer = setInterval(() => {
+      date.value = new Date();
+    }, 1000);
+
+    return () => {
+      clearInterval(timer);
+    };
+  });
+
+  return {
+    date,
+  };
+}
+</script>
