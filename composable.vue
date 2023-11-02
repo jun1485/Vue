@@ -71,3 +71,16 @@ import { ref, watchEffect } from 'vue';
   };
 }
 </script>
+
+<!-- MyComponent.vue -->
+<script setup lang="ts">
+import { useDateTime } from './useDateTime';
+
+const { date } = useDateTime();
+</script>
+
+<template>
+  <div>
+    Current Date and Time: {{ date }}
+  </div>
+</template>
