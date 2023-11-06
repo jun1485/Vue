@@ -84,3 +84,12 @@ const { date } = useDateTime();
     Current Date and Time: {{ date }}
   </div>
 </template>
+
+
+// 통신을 위한 Composables 예시
+<!-- useFetchUser.ts -->
+<script setup lang="ts">
+import { ref, onMounted } from 'vue';
+import axios from 'axios';
+
+export function useFetchUser(userId: string) { }
