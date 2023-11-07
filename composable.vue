@@ -92,4 +92,27 @@ const { date } = useDateTime();
 import { ref, onMounted } from 'vue';
 import axios from 'axios';
 
-export function useFetchUser(userId: string) { }
+export function useFetchUser(userId: string) {
+  const user = ref(null);
+  const loading = ref(false);
+  const error = ref(null);
+
+  onMounted(async () => {
+    loading.value = true;
+    try {
+      const response = await axios.get(`/api/users/${userId}`);
+      user.value = response.data;
+    } catch (e) {
+      error.value = e;
+    } finally {
+      loading.value = false;
+    }
+  });
+
+  return {
+    user,
+    loading,
+    error,
+  };
+}
+</script>
