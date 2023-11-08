@@ -116,3 +116,12 @@ export function useFetchUser(userId: string) {
   };
 }
 </script>
+
+
+// 상태 관리를 위한 Composables 예시
+<!-- useCounter.ts -->
+<script setup lang="ts">
+import { ref } from 'vue';
+  
+export function useCounter() { }
+</script>
