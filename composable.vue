@@ -123,5 +123,24 @@ export function useFetchUser(userId: string) {
 <script setup lang="ts">
 import { ref } from 'vue';
   
-export function useCounter() { }
+export function useCounter() {
+  export function useCounter() {
+  const count = ref(0);
+
+  const increment = () => {
+    count.value++;
+  };
+
+  const decrement = () => {
+    count.value--;
+  };
+
+  return {
+    count,
+    increment,
+    decrement,
+  };
+}
+</script>
+}
 </script>
