@@ -39,3 +39,4 @@ const state = reactive({
 
 // 내부적으로 Proxy를 사용하여 state 객체는 반응성을 가짐
 </script>
+
