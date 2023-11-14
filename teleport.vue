@@ -9,10 +9,9 @@
 </teleport>
 
 
-//
 <template>
   <button @click="modalOpen = true">모달 열기</button>
-  <Teleport to="body">
+  <Teleport to="body">      // <Teleport to="body">는 모달의 HTML을 <body> 태그 끝으로 옮겨줌.
     <div v-if="modalOpen">
       <!-- 모달 내용 -->
       <button @click="modalOpen = false">닫기</button>
@@ -25,3 +24,5 @@ import { ref } from 'vue';
 
 const modalOpen = ref(false);
 </script>
+
+// 반응성: Teleport의 to 속성은 반응성을 가지고 있어서, 그 값이 바뀌면 내용이 다른 위치로 옮겨짐.
