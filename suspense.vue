@@ -19,3 +19,24 @@ const AsyncComponent = defineAsyncComponent(() =>
   import('./components/MyAsyncComponent.vue')
 );
 </script>
+
+
+//
+<script setup>
+import { defineAsyncComponent } from 'vue';
+
+const AsyncComponent = defineAsyncComponent({
+  loader: () => import('./components/MyAsyncComponent.vue'),
+  loadingComponent: LoadingComponent,
+  errorComponent: ErrorComponent,
+  delay: 200, // 지연 시간(밀리초) 후 로딩 컴포넌트 표시
+  timeout: 3000, // 타임아웃 시간(밀리초) 후 에러 컴포넌트 표시
+  onError(error, retry, fail, attempts) {
+    if (error.message === '특정 에러 메시지' && attempts <= 3) {
+      retry();
+    } else {
+      fail();
+    }
+  },
+});
+</script>
