@@ -22,6 +22,20 @@ const AsyncComponent = defineAsyncComponent(() =>
 
 
 //
+<template>
+  <Suspense>
+    <template #default>
+      <AsyncComponent />
+    </template>
+    <template #fallback>
+      <div>로딩 중...</div>
+    </template>
+    <template #error="{ error }">
+      <div>에러 발생: {{ error.message }}</div>
+    </template>
+  </Suspense>
+</template>
+
 <script setup>
 import { defineAsyncComponent } from 'vue';
 
