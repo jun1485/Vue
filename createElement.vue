@@ -24,3 +24,23 @@ new Vue({
   }
 });
 
+
+import { h } from 'vue';
+
+export default {
+  render() {
+    return h(
+      'div',
+      {
+        class: 'foo',
+        onClick: this.handleClick
+      },
+      '클릭하세요!'
+    );
+  },
+  methods: {
+    handleClick() {
+      console.log('클릭됨!');
+    }
+  }
+};
