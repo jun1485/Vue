@@ -25,6 +25,8 @@ new Vue({
 });
 
 
+// Vue 3에서는 createElement 함수의 별칭으로 h 함수가 도입됨.
+// h 함수는 React의 JSX와 유사한 패턴을 따르는 것을 목표로 하며, 동일한 인자를 받음.
 import { h } from 'vue';
 
 export default {
