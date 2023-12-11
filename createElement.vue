@@ -46,3 +46,19 @@ export default {
     }
   }
 };
+
+
+export default {
+  render() {
+    return (
+      <div class="foo" onClick={this.handleClick}>
+        클릭하세요!
+      </div>
+    );
+  },
+  methods: {
+    handleClick() {
+      console.log('클릭됨!');
+    }
+  }
+};
