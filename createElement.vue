@@ -47,7 +47,7 @@ export default {
   }
 };
 
-
+// Vue에서도 JSX를 사용하여 'createElement' 또는 h()를 직접 호출하지 않고, HTML구문 작성 가능.
 export default {
   render() {
     return (
