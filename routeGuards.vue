@@ -28,3 +28,18 @@ const router = new VueRouter({
     }
   ]
 });
+
+
+// 컴포넌트 내 가드
+<script>
+export default {
+  beforeRouteEnter(to, from, next) {
+    // 라우트로 들어오기 전에 실행되는 로직
+    next();
+  },
+  beforeRouteLeave(to, from, next) {
+    // 라우트를 떠나기 전에 실행되는 로직
+    next();
+  }
+};
+</script>
