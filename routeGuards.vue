@@ -3,10 +3,28 @@
 // 권한 검사, 로그인 상태확인, 데이터 사전 로드 등에 사용.
 
 // 전역 가드
+// router.beforeEach, router.afterEach, router.beforeResolve 등 메서드 제공.
 router.beforeEach((to, from, next) => {
   if (to.meta.requiresAuth && !isAuthenticated()) {
     next({ path: '/login' });
   } else {
     next();
   }
+});
+
+// 라우트별 가드
+const router = new VueRouter({
+  routes: [
+    {
+      path: '/secure',
+      component: SecureComponent,
+      beforeEnter: (to, from, next) => {
+        if (!isAuthenticated()) {
+          next('/login');
+        } else {
+          next();
+        }
+      }
+    }
+  ]
 });
