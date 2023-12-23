@@ -43,3 +43,8 @@ export default {
   }
 };
 </script>
+
+
+// 라우트 가드의 주의사항
+// - next()를 반드시 호출해야 함. 그렇지 않으면 라우트가 중단됨.
+// - beforeRouteEnter 가드에서는 this를 사용 불가능. 대신, next(vm => {...})를 사용해 컴포넌트 인스턴스에 접근 가능.
