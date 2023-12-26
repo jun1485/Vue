@@ -48,3 +48,19 @@ export default {
 // 라우트 가드의 주의사항
 // - next()를 반드시 호출해야 함. 그렇지 않으면 라우트가 중단됨.
 // - beforeRouteEnter 가드에서는 this를 사용 불가능. 대신, next(vm => {...})를 사용해 컴포넌트 인스턴스에 접근 가능.
+
+
+// 데이터 프리패칭 및 상태관리
+router.beforeEach(async (to, from, next) => {
+  if (to.meta.requiresData) {
+    try {
+      const data = await fetchData(to.params.id);
+      to.params.data = data; // 데이터를 라우트 파라미터에 추가
+      next();
+    } catch (error) {
+      next('/error');
+    }
+  } else {
+    next();
+  }
+});
