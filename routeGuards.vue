@@ -51,6 +51,7 @@ export default {
 
 
 // 데이터 프리패칭 및 상태관리
+// 라우트 가드를 사용해 특정 라우트로 이동하기 전에 필요한 데이터를 미리 가져오거나, 상태 관리 가능.
 router.beforeEach(async (to, from, next) => {
   if (to.meta.requiresData) {
     try {
