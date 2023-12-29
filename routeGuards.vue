@@ -65,3 +65,18 @@ router.beforeEach(async (to, from, next) => {
     next();
   }
 });
+
+
+// 동적 권한 제어
+// 특정 라우트에 접근하기 전에 사용자의 권한을 체크, 해당 권한에 따라 접근을 허용하거나 차단.
+
+// 전역 라우트 가드
+router.beforeEach((to, from, next) => {
+  if (to.meta.requiresAuth && !userIsAuthenticated()) {
+    next('/login');
+  } else {
+    next();
+  }
+});
+
+// 특정 라우트별 가드(권한 체크)
