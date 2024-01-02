@@ -80,3 +80,17 @@ router.beforeEach((to, from, next) => {
 });
 
 // 특정 라우트별 가드(권한 체크)
+const routes = [
+  {
+    path: '/admin',
+    component: AdminPanel,
+    meta: { requiresAuth: true, roles: ['admin'] },
+    beforeEnter: (to, from, next) => {
+      if (!userIsAuthenticated() || !userHasRole(to.meta.roles)) {
+        next('/login');
+      } else {
+        next();
+      }
+    }
+  }
+];
