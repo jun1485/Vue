@@ -94,3 +94,16 @@ const routes = [
     }
   }
 ];
+
+
+// 실제 구현 예시
+// 권한 체크 함수 구현
+function userIsAuthenticated() {
+  // 사용자 인증 로직 구현
+  return !!localStorage.getItem('user-token');
+}
+
+function userHasRole(requiredRoles) {
+  const userRoles = getUserRoles(); // 사용자의 역할을 가져오는 로직
+  return requiredRoles.some(role => userRoles.includes(role));
+}
