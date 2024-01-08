@@ -107,19 +107,3 @@ function userHasRole(requiredRoles) {
   const userRoles = getUserRoles(); // 사용자의 역할을 가져오는 로직
   return requiredRoles.some(role => userRoles.includes(role));
 }
-
-// 메타 필드와 라우트 가드 활용
-const routes = [
-  {
-    path: '/secure',
-    component: SecurePage,
-    meta: { requiresAuth: true, roles: ['admin', 'editor'] },
-    beforeEnter: (to, from, next) => {
-      if (!userIsAuthenticated() || !userHasRole(to.meta.roles)) {
-        next('/login');
-      } else {
-        next();
-      }
-    }
-  }
-];
