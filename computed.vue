@@ -6,3 +6,27 @@ computed: {
     return this.firstName + ' ' + this.lastName;
   }
 }
+
+<template>
+  <div>
+    <input v-model="firstName" placeholder="First Name">
+    <input v-model="lastName" placeholder="Last Name">
+    <p>Full Name: {{ fullName }}</p>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      firstName: '',
+      lastName: ''
+    };
+  },
+  computed: {
+    fullName() {
+      return `${this.firstName} ${this.lastName}`;
+    }
+  }
+};
+</script>
