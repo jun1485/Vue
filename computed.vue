@@ -7,6 +7,7 @@ computed: {
   }
 }
 
+// fullName은 firstName과 lastName에 종속되어 있으며, 이 두 데이터 중 하나라도 변경되면 자동으로 fullName이 업데이트.
 <template>
   <div>
     <input v-model="firstName" placeholder="First Name">
