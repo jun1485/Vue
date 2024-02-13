@@ -7,5 +7,3 @@ watch: {
     immediate: true // 컴포넌트 생성시 핸들러 즉시 실행
   }
 }
-
-edit in place...
