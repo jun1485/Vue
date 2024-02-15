@@ -17,8 +17,7 @@ watch: {
 watch: {
   someArray: {
     handler(newValue, oldValue) {
-      // 배열이나 내부 요소가 변경될 때 실행
     },
-    deep: true
+    deep: true  // 배열이나 내부 요소가 변경될 때 실행
   }
 }
