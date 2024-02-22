@@ -18,6 +18,8 @@ person.fullName = 'Elvin';
 console.log(person.fullName); // 'Elvin'
 
 
+// get을 사용하면, 객체의 속성을 읽을 때마다 해당 속성을 계산하는 함수를 실행할 수 있음.
+// 접근자 프로퍼티는 상속을 통해 확장될 수 있으며, 하위 클래스에서 오버라이드될 수 있음.
 const user = {
   internalAge: 30,
   get age() {
