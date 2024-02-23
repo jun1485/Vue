@@ -32,3 +32,11 @@ const user = {
     this.internalAge = value;
   }
 };
+
+
+// Object.defineProperty() 또는 Object.defineProperties() 메서드를 사용하여 접근자 프로퍼티 정의 가능.
+const obj = {};
+Object.defineProperty(obj, 'property1', {
+  value: 42,
+  writable: false
+});
