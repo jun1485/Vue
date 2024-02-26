@@ -40,3 +40,14 @@ Object.defineProperty(obj, 'property1', {
   value: 42,
   writable: false
 });
+
+
+
+import { watch, ref } from 'vue';
+
+const firstName = ref('');
+const lastName = ref('');
+
+watch([() => firstName.value, () => lastName.value], ([newFirstName, newLastName], [oldFirstName, oldLastName]) => {
+  console.log(`이름 변경됨: ${newFirstName} ${newLastName}`);
+}, { immediate: true });
