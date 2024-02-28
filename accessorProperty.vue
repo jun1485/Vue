@@ -42,7 +42,7 @@ Object.defineProperty(obj, 'property1', {
 });
 
 
-
+// 배열을 통해 여러 소스 검사
 import { watch, ref } from 'vue';
 
 const firstName = ref('');
@@ -51,3 +51,16 @@ const lastName = ref('');
 watch([() => firstName.value, () => lastName.value], ([newFirstName, newLastName], [oldFirstName, oldLastName]) => {
   console.log(`이름 변경됨: ${newFirstName} ${newLastName}`);
 }, { immediate: true });
+
+
+// 객체의 반응성 감시
+import { watch, reactive } from 'vue';
+
+const userProfile = reactive({
+  name: 'John Doe',
+  age: 30
+});
+
+watch(() => userProfile, (newProfile, oldProfile) => {
+  console.log(`프로필 변경됨: ${newProfile.name}`);
+}, { deep: true });
