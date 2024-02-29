@@ -64,3 +64,6 @@ const userProfile = reactive({
 watch(() => userProfile, (newProfile, oldProfile) => {
   console.log(`프로필 변경됨: ${newProfile.name}`);
 }, { deep: true });
+
+
+// watcher 정리 (컴포넌트가 언마운트되기 전이나 특정 조건에서 watcher를 중지해야 할 때 유용)
