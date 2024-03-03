@@ -47,3 +47,6 @@ computed: {
     }
   }
 }
+
+// props.network 값이 변동될 때마다 useFetchGasFees()를 실행, 그 결과를 gasFees에 할당.
+const { data: gasFees } = useFetchGasFees(computed(() => props.network)); 
