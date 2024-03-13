@@ -8,3 +8,8 @@ const user = {
 const { name, age } = user;
 console.log(name); // Elvin Ju
 console.log(age); // 28
+
+const name = 'Juso';
+const age = 22;
+
+const user = { name, age }; // { name: 'Juso', age: 22 }
