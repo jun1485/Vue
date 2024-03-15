@@ -13,3 +13,14 @@ const name = 'Juso';
 const age = 22;
 
 const user = { name, age }; // { name: 'Juso', age: 22 }
+
+
+// 대괄호 표기법 : 프로그램의 실행 시점에 속성 이름을 결정해야 할 때 유용.
+let eventPrefix = 'user_';
+let event = {
+  [eventPrefix + 'click']: true,
+  [eventPrefix + 'enter']: false,
+};
+
+console.log(event.user_click); // true
+console.log(event['user_enter']); // false
