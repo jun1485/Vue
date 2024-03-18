@@ -24,3 +24,12 @@ let event = {
 
 console.log(event.user_click); // true
 console.log(event['user_enter']); // false
+
+
+// 객체 병합, 스프레드 연산자
+let user = { name: 'Jun', age: 28 };
+let permissions = { canView: true, canEdit: false };
+
+let userPermissions = { ...user, ...permissions };
+console.log(userPermissions);
+// { name: "Jun", age: 28, canView: true, canEdit: false }
