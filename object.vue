@@ -33,3 +33,16 @@ let permissions = { canView: true, canEdit: false };
 let userPermissions = { ...user, ...permissions };
 console.log(userPermissions);
 // { name: "Jun", age: 28, canView: true, canEdit: false }
+
+
+let propertyName = 'status';
+let job = {
+  id: 1,
+  [propertyName]: 'Active',
+  updateStatus(newStatus) {
+    this[propertyName] = newStatus;
+  }
+};
+
+job.updateStatus('Inactive');
+console.log(job.status); // "Inactive"
