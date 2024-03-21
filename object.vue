@@ -46,3 +46,9 @@ let job = {
 
 job.updateStatus('Inactive');
 console.log(job.status); // "Inactive"
+
+
+// 객체 구조분해 할당 (비구조화 할당)
+let { name: userName, age = 25 } = { name: 'John' };
+console.log(userName); // "John"
+console.log(age); // 25
