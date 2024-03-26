@@ -69,3 +69,18 @@ const modelValue = defineModel("title");
 </script>
 
 <style lang="scss"></style>
+
+
+// default값 지정
+<template>
+  <div>
+    <input v-model="modelValue" />
+  </div>
+</template>
+
+<script setup lang="ts">
+import { defineModel } from "vue";
+const modelValue = defineModel<string>("title", { default: "default title" });
+</script>
+
+<style lang="scss"></style>
