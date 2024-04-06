@@ -8,16 +8,24 @@
     </ul>
   </div>
 </template>
+
 <script setup lang="ts">
 import { useMutation, useQuery, useQueryClient } from "@tanstack/vue-query";
+import { ref } from "vue";
+
 const queryClient = useQueryClient();
+const todos = ref<Array<{ id: number; title: string; completed: boolean }>>([]);
+
 const { isPending, data, error, isError } = useQuery({
   queryKey: ["todos"],
   queryFn: async () => {
     const response = await fetch("https://jsonplaceholder.typicode.com/todos");
-    return response.json();
+    const data = await response.json();
+    todos.value = data;
+    return data;
   },
 });
+
 const mutation = useMutation<
   { title: string; completed: boolean },
   unknown,
@@ -28,14 +36,17 @@ const mutation = useMutation<
     const response = await fetch("https://jsonplaceholder.typicode.com/todos", {
       method: "POST",
       body: JSON.stringify(newTodo),
-      headers: { "Content-type": "application/json; charset=UTF-8" },
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
     });
     return response.json();
   },
-  onSuccess: () => {
-    queryClient.invalidateQueries({ queryKey: ["todos"] });
+  onSuccess: (data) => {
+    todos.value.push(data);
   },
 });
+
 const onButtonClick = () => {
   mutation.mutate({ title: "New Todo", completed: false });
 };
