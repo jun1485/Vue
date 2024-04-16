@@ -42,3 +42,14 @@ watch(() => selectedUserId, async (newId) => {
   const userData = await fetchUserData(newId);
   console.log(userData);
 }, { immediate: true });
+
+
+// watch( () => {}, () => {} ) 형태
+watch(
+  () => currentCurrencyAmount.value, // 감시 대상을 반환하는 함수
+  (newValue, oldValue) => {
+    // 변화가 감지될 때 실행될 콜백 함수
+    // 여기서는 currentCurrencyAmount의 변화를 감시합니다.
+  },
+  { deep: true, immediate: true } // 옵션 객체 (선택사항)
+);
