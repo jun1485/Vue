@@ -9,7 +9,7 @@ constructor(params: Omit<CompanyInfo, 'constructor'>) {
 
 const fetchCompanyInfo = async (companyId: string): Promise<CompanyInfo> => {
   // 실제 API 호출 대신 더미 데이터 반환
-  return Promise.resolve(createDummyCompanyInfo());
+  return Promise.resolve(createDummyCompanyInfo()); // Promise.resolve를 반환하여 즉시 더미데이터를 promise로 반환
 };
 
 export const useCompanyInfoQuery = (
@@ -20,6 +20,6 @@ export const useCompanyInfoQuery = (
     queryFn: () => {
       return fetchCompanyInfo(companyId.value);
     },
-    enabled: computed(() => !!companyId.value),
+    enabled: computed(() => !!companyId.value), // companyId값이 있는 경우만 쿼리 함수 실
   });
 };
