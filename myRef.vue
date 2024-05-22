@@ -6,7 +6,13 @@ function ref(initValue) {
     get value() {
       return _value;
     },
+
+    set value(newValue) {
+      _value = newValue;
+    },
   };
+
+  return reactiveObject;
 }
 </script>
 
