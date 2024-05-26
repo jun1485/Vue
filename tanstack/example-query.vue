@@ -53,4 +53,10 @@ const onButtonClick = () => {
 </script>
 <style lang="scss"></style>
 
-edit in place ...
+
+const { data: searchedNotices } = useQuery({
+  queryKey: ["searchedNotices", searchValue.value],
+  queryFn: () => fetchSearchedNotices(searchValue.value),
+  enabled: !!searchValue.value  // searchValue.value가 비어 있지 않을 때만 쿼리 실행
+});
+
