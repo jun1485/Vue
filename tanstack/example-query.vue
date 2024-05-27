@@ -54,9 +54,11 @@ const onButtonClick = () => {
 <style lang="scss"></style>
 
 
+// searchValue.value가 변경될 때마다 새로운 쿼리 키가 생성되어 쿼리가 재실행.
+// searchValue.value가 비어있지 않을 경우에만 쿼리를 실행하도록 enabled 옵션 설정.
 const { data: searchedNotices } = useQuery({
   queryKey: ["searchedNotices", searchValue.value],
   queryFn: () => fetchSearchedNotices(searchValue.value),
-  enabled: !!searchValue.value  // searchValue.value가 비어 있지 않을 때만 쿼리 실행
+  enabled: !!searchValue.value
 });
 
