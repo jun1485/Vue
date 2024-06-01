@@ -1,48 +1,23 @@
- // 하나의 마운트 포인트에서 여러 컴포넌트를 동적 교체
+// 부모 컴포넌트 
 <template>
-  <component :is="currentComponent"></component>
+  <div>
+    <BrotherComponentA @updateData="handleUpdate" />
+    <BrotherComponentB :sharedData="sharedData" />
+  </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue';
+import BrotherComponentA from './BrotherComponentA.vue';
+import BrotherComponentB from './BrotherComponentB.vue';
 
-const components = {
-  compA: defineAsyncComponent(() => import('./ComponentA.vue')),
-  compB: defineAsyncComponent(() => import('./ComponentB.vue'))
+const sharedData = ref('');
+
+const handleUpdate = (data: string) => {
+  sharedData.value = data;
 };
-
-const currentComponent = ref('compA');
-
-// 컴포넌트를 변경하는 메소드 예제
-function switchComponent(componentName: string) {
-  currentComponent.value = componentName;
-}
 </script>
 
-
-// 비동기 컴포넌트는 Vue의 'defineAsyncComponent' 메서드를 사용하여 정의.
-// 컴포넌트가 필요할 떄만 서버로부터 로드하도록 하여 초기 로드 시간을 줄여줌.
-// AsyncComponentA.vue
-import { defineAsyncComponent } from 'vue';
-
-export default defineAsyncComponent(() =>
-  import('./components/AsyncComponentA.vue')
-);
-
-// AsyncComponentB.vue
-import { defineAsyncComponent } from 'vue';
-
-
-// 비동기 컴포넌트를 사용할 때는 로딩, 에러 표시, 타임아웃 등을 옵션으로 설정 가능.
-export default defineAsyncComponent({
-  // 가져올 컴포넌트
-  loader: () => import('./components/AsyncComponentB.vue'),
-  // 로딩 중에 표시할 컴포넌트
-  loadingComponent: LoadingComponent,
-  // 에러가 발생했을 때 표시할 컴포넌트
-  errorComponent: ErrorComponent,
-  // 로딩 시간 초과 시간(밀리초)
-  timeout: 3000,
-  // 에러 발생 시 재시도 횟수
-  retry: 3
-});
+<style scoped>
+/* Tailwind CSS styles */
+</style>
