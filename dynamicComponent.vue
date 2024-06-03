@@ -18,6 +18,20 @@ const handleUpdate = (data: string) => {
 };
 </script>
 
-<style scoped>
-/* Tailwind CSS styles */
-</style>
+// 형제 컴포넌트 A
+<template>
+  <div>
+    <input v-model="data" @input="emitData" placeholder="Enter data" />
+  </div>
+</template>
+
+<script setup lang="ts">
+import { ref, defineEmits } from 'vue';
+
+const data = ref('');
+const emit = defineEmits(['updateData']);
+
+const emitData = () => {
+  emit('updateData', data.value);
+};
+</script>
