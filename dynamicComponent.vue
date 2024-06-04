@@ -18,6 +18,7 @@ const handleUpdate = (data: string) => {
 };
 </script>
 
+
 // 형제 컴포넌트 A
 <template>
   <div>
@@ -34,4 +35,18 @@ const emit = defineEmits(['updateData']);
 const emitData = () => {
   emit('updateData', data.value);
 };
+</script>
+
+
+// 형제 컴포넌트 B
+<template>
+  <div>
+    <p>Shared Data: {{ sharedData }}</p>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { defineProps } from 'vue';
+
+const props = defineProps<{ sharedData: string }>();
 </script>
