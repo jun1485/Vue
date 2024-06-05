@@ -1,52 +1,19 @@
-// 부모 컴포넌트 
+<!-- ComponentA.vue -->
 <template>
   <div>
-    <BrotherComponentA @updateData="handleUpdate" />
-    <BrotherComponentB :sharedData="sharedData" />
+    <p>This is Component A</p>
+    <p>{{ someProp }}</p>
+    <button @click="emitEvent">Emit Event</button>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
-import BrotherComponentA from './BrotherComponentA.vue';
-import BrotherComponentB from './BrotherComponentB.vue';
+import { defineProps, defineEmits } from 'vue';
 
-const sharedData = ref('');
+const props = defineProps<{ someProp: string }>();
+const emit = defineEmits(['customEvent']);
 
-const handleUpdate = (data: string) => {
-  sharedData.value = data;
+const emitEvent = () => {
+  emit('customEvent', 'Event from Component A');
 };
-</script>
-
-
-// 형제 컴포넌트 A
-<template>
-  <div>
-    <input v-model="data" @input="emitData" placeholder="Enter data" />
-  </div>
-</template>
-
-<script setup lang="ts">
-import { ref, defineEmits } from 'vue';
-
-const data = ref('');
-const emit = defineEmits(['updateData']);
-
-const emitData = () => {
-  emit('updateData', data.value);
-};
-</script>
-
-
-// 형제 컴포넌트 B
-<template>
-  <div>
-    <p>Shared Data: {{ sharedData }}</p>
-  </div>
-</template>
-
-<script setup lang="ts">
-import { defineProps } from 'vue';
-
-const props = defineProps<{ sharedData: string }>();
 </script>
