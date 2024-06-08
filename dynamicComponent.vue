@@ -19,7 +19,7 @@ const emitEvent = () => {
 </script>
 
 
-// ComponenB.vue
+<!-- ComponentB.vue -->
 <template>
   <div>
     <h3>Deeply Nested Child Component</h3>
@@ -37,27 +37,6 @@ export default {
     return { sharedState };
   }
 }
-</script>
-
-
-<!-- ComponentB.vue -->
-<template>
-  <div>
-    <p>This is Component B</p>
-    <p>{{ someProp }}</p>
-    <button @click="emitEvent">Emit Event</button>
-  </div>
-</template>
-
-<script setup lang="ts">
-import { defineProps, defineEmits } from 'vue';
-
-const props = defineProps<{ someProp: string }>();
-const emit = defineEmits(['customEvent']);
-
-const emitEvent = () => {
-  emit('customEvent', 'Event from Component B');
-};
 </script>
 
 
@@ -87,8 +66,4 @@ const componentProps = ref({
 const handleEvent = (payload: any) => {
   console.log('Custom event received:', payload);
 };
-</script>
-
-<style scoped>
-/* Tailwind CSS styles */
-</style>
+</script
