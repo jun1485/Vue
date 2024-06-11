@@ -16,3 +16,14 @@ const emitEvent = () => {
 </script>
 
 <!-- ParentComponent.vue -->
+<template>
+  <MyComponent @someEvent="handleSomeEvent" />
+</template>
+
+<script setup lang="ts">
+import MyComponent from './MyComponent.vue'
+
+const handleSomeEvent = () => {
+  console.log('someEvent가 발생했습니다.')
+}
+</script>
