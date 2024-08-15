@@ -27,3 +27,4 @@ const handleSomeEvent = () => {
   console.log('someEvent가 발생했습니다.')
 }
 </script>
+
